@@ -7,19 +7,22 @@ createApp({
     const responsiveMenuClassName = ref("responsiveMenu-container");
     const responsiveMenuClassNameActive = ref("responsive-Menu--active");
     const methodType = ref('zarinpal')
+    const isError = ref(false)
     const PlanToShop = ref({})
     const defaultPlan = ref({
       price:"مطابق با پلن شما",
       time:"اشتراک پرمیوم",
       ex:"مطابق با پلن شما",
-      timeToActive: "مطابق با پلن شما"
+      timeToActive: "مطابق با پلن شما",
+      planType:'',
+
     })
     const CurrentPlans = ref([
       {
         time: "سه ماهه",
         month:3,
         timeToActive:" 1 الی 30 دقیقه",
-
+        planType:'threemonth',
         price: "870000",
         options: [
           { Text: "بدون نیاز به لاگین در اکانت شما", active: true },
@@ -73,6 +76,7 @@ createApp({
         time: "شش ماه",
         month:6,
         timeToActive:" 1 الی 30 دقیقه",
+        planType:'sixmonth',
 
         price: "1270000",
         options: [
@@ -126,7 +130,8 @@ createApp({
         time: "یک ساله",
         price: "1950000",
         timeToActive:" 1 الی 30 دقیقه",
-
+        planType:'twelvemonth',
+        
         month:12,
         options: [
           { Text: "بدون نیاز به لاگین در اکانت شما", active: true },
@@ -179,8 +184,10 @@ createApp({
         time: "یک ماهه",
         price: "300000",
         timeToActive:" 1 الی 5 دقیقه",
-
+        planType:'threemonth',
+      
         month:1,
+        planType:'onemonth',
 
         options: [
           { Text: "نیاز به لاگین در اکانت شما", active: false },
@@ -235,6 +242,7 @@ createApp({
         time: "سه ماهه",
         timeToActive:" 1 الی 30 دقیقه",
         month:3,
+        planType:'threemonth',
         price: "870000",
         options: [
           { Text: "بدون نیاز به لاگین در اکانت شما", active: true },
@@ -285,6 +293,8 @@ createApp({
       {
         time: "شش ماه",
         month:6,
+        planType:'sixmonth',
+
         timeToActive:" 1 الی 30 دقیقه",
 
         price: "1270000",
@@ -338,6 +348,7 @@ createApp({
       {
         time: "یک ساله",
         price: "1950000",
+        planType:'twelvemonth',
         timeToActive:" 1 الی 30 دقیقه",
 
         month:12,
@@ -390,6 +401,7 @@ createApp({
       {
         time: "یک ماهه",
         timeToActive:" 1 الی 5 دقیقه",
+        planType:'threemonth',
 
         price: "300000",
         month:1,
@@ -779,7 +791,7 @@ createApp({
 
       let ExMonth = Number(digitsFaToEn(CurrentDate)) + Number(ex)
       
-      if(digitsFaToEn(CurrentDate) == 12){
+      if(ExMonth>12){
         ExMonth = ExMonth - 12
         ExYear = Number(digitsFaToEn(ExYear)) + 1
       }
@@ -788,11 +800,12 @@ createApp({
       defaultPlan.value = {
         price:Number(defPrice).toLocaleString(),
   time:`   اشتراک پرمیوم  ${tim}`,
-  ex:` از ${today} تا ${ExFinal}`,
+  ex:` از ${digitsEnToFa(today)} تا ${digitsEnToFa(ExFinal)}`,
   timeToActive: `
  
   ${PlanToShop.value.timeToActive}
   `,
+  planType:PlanToShop.value.planType
 
       }
     }
@@ -891,11 +904,43 @@ createApp({
       ) {
       }
     });
+    const HandlePay = async ()=>{
+        let cellPhone = document.querySelector('.cellphone').value
+        let username = document.querySelector('.username').value
+        let paymentMethod = methodType
+        let PlanType = PlanToShop
+        console.log('waite . . .')
+        await fetch('https://bothosts.org/api/index.php',{
+          method:'post',
+          body: JSON.stringify({
+            username:username,
+            key:'xxxxx',
+            phone_number: cellPhone,
+            method_payment: paymentMethod,
+            plan: PlanType
+        }),
+         
+        // Adding headers to the request
+        headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "auth": 'xxxxx'
+        }
+        }).then(respo=>respo.json()).then(data=>{
+          console.log(data)
+        })
+       
+    }
+    const closeNotif = ()=>{
+      isError.value = false
+    }
    function getlog (){
     console.log('cliedk')
    }
     // return values
     return {
+      HandlePay,
+      closeNotif,
+      isError,
       getlog,
       onOpenMenu,
       onCloseMenu,

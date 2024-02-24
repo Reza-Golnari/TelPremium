@@ -1012,3 +1012,25 @@ footer {
   background-color: rgb(218, 138, 114);
 
 }
+.notifcation{
+  position: fixed;
+  top: 1rem;
+ 
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  padding: 0.3rem 0.8rem;
+  background-color: rgb(255, 0, 128);
+  border-radius: 0.8rem;
+  right: 1rem;
+  box-shadow: 0rem 0.4rem 1rem rgb(122, 122, 122);
+}
+.notifcation-text{
+  margin: auto 0.6rem;
+  color: white;
+}
+.notifcation svg{
+  color: white;
+  width: 2.34rem;
+  cursor: pointer;
+}
