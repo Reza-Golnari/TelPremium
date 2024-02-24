@@ -8,11 +8,18 @@ createApp({
     const responsiveMenuClassNameActive = ref("responsive-Menu--active");
     const methodType = ref('zarinpal')
     const PlanToShop = ref({})
-    
+    const defaultPlan = ref({
+      price:"مطابق با پلن شما",
+      time:"اشتراک پرمیوم",
+      ex:"مطابق با پلن شما",
+      timeToActive: "مطابق با پلن شما"
+    })
     const CurrentPlans = ref([
       {
         time: "سه ماهه",
         month:3,
+        timeToActive:" 1 الی 30 دقیقه",
+
         price: "870000",
         options: [
           { Text: "بدون نیاز به لاگین در اکانت شما", active: true },
@@ -65,6 +72,8 @@ createApp({
       {
         time: "شش ماه",
         month:6,
+        timeToActive:" 1 الی 30 دقیقه",
+
         price: "1270000",
         options: [
           { Text: "بدون نیاز به لاگین در اکانت شما", active: true },
@@ -116,6 +125,8 @@ createApp({
       {
         time: "یک ساله",
         price: "1950000",
+        timeToActive:" 1 الی 30 دقیقه",
+
         month:12,
         options: [
           { Text: "بدون نیاز به لاگین در اکانت شما", active: true },
@@ -167,6 +178,8 @@ createApp({
       {
         time: "یک ماهه",
         price: "300000",
+        timeToActive:" 1 الی 5 دقیقه",
+
         month:1,
 
         options: [
@@ -220,6 +233,7 @@ createApp({
     const Plans = ref([
       {
         time: "سه ماهه",
+        timeToActive:" 1 الی 30 دقیقه",
         month:3,
         price: "870000",
         options: [
@@ -271,6 +285,8 @@ createApp({
       {
         time: "شش ماه",
         month:6,
+        timeToActive:" 1 الی 30 دقیقه",
+
         price: "1270000",
         options: [
           { Text: "بدون نیاز به لاگین در اکانت شما", active: true },
@@ -322,6 +338,8 @@ createApp({
       {
         time: "یک ساله",
         price: "1950000",
+        timeToActive:" 1 الی 30 دقیقه",
+
         month:12,
         options: [
           { Text: "بدون نیاز به لاگین در اکانت شما", active: true },
@@ -371,6 +389,8 @@ createApp({
       },
       {
         time: "یک ماهه",
+        timeToActive:" 1 الی 5 دقیقه",
+
         price: "300000",
         month:1,
 
@@ -718,9 +738,63 @@ createApp({
         el.style.height =
           el.querySelector(".question-title").scrollHeight + 10 + "px";
     }
+    function convertNumber(fromNum) {
+      var result;
+      var arabicMap = {
+          '١۲':12,
+          '١١':11,
+          '١٠': 10,
+          '٩': 9,
+          '٨': 8,
+          '٧': 7,
+          '٦': 6,
+          '٥': 5,
+          '٤': 4,
+          '٣': 3,
+          '٢': 2,
+          '١': 1,
+          '٠': 0
+      };
+      result = arabicMap[fromNum];
+      if (result === undefined) {
+          result = -1;
+      }
+      return result;
+  }
+  
+ 
+    
     const chekcout = (Plan)=>{
-      console.log(Plan)
+    
       PlanToShop.value = Plan
+      let defPrice = PlanToShop.value.price
+      let ex = Number(PlanToShop.value.month)
+      let tim = PlanToShop.value.time
+      let activeTie = PlanToShop.value.timeToActive
+      let today = new Date().toLocaleDateString('fa-IR');     
+      let CurrentDate = today.split('/')[1]
+      console.log(convertNumber(CurrentDate))
+      let ExYear = today.split('/')[0]
+      let ExDay = today.split('/')[2]
+
+      let ExMonth = Number(digitsFaToEn(CurrentDate)) + Number(ex)
+      
+      if(digitsFaToEn(CurrentDate) == 12){
+        ExMonth = ExMonth - 12
+        ExYear = Number(digitsFaToEn(ExYear)) + 1
+      }
+      let ExFinal = `${ExYear}/${ExMonth}/${ExDay}`
+      console.log(methodType)
+      defaultPlan.value = {
+        price:Number(defPrice).toLocaleString(),
+  time:`   اشتراک پرمیوم  ${tim}`,
+  ex:` از ${today} تا ${ExFinal}`,
+  timeToActive: `
+ 
+  ${PlanToShop.value.timeToActive}
+  `,
+
+      }
     }
     const handlePlanType = (type)=>{
       console.log(type)
@@ -751,7 +825,8 @@ createApp({
           }
           i.classList.add('selectPaymentWay__item--active')
           methodType.value = i.getAttribute('priceType')
-          console.log(methodType)
+          console.log(PlanToShop.value.price)
+         
         })
       })
       document
@@ -832,6 +907,8 @@ createApp({
       chekcout,
       handlePlanType,
       CurrentPlans,
+      defaultPlan,
+      PlanToShop
      
     };
   },
