@@ -6,6 +6,9 @@ createApp({
   setup() {
     const responsiveMenuClassName = ref("responsiveMenu-container");
     const responsiveMenuClassNameActive = ref("responsive-Menu--active");
+    const methodType = ref('zarinpal')
+    const PlanToShop = ref({})
+    
     const CurrentPlans = ref([
       {
         time: "سه ماهه",
@@ -647,6 +650,21 @@ createApp({
     const selectAll = (className) => {
       return document.querySelectorAll(className);
     };
+    const pymentType = (Wrapper,Type,circleClass)=>{
+      console.log('clicked')
+     
+      if(isElementExist('selectPaymentWay__item--active').message == 'ok'){
+        removeClass('selectPaymentWay__item--active','selectPaymentWay__item--active')
+      }
+      if(isElementExist('selectPaymentWay__item-circle--active').message == 'ok'){
+        removeClass('selectPaymentWay__item-circle--active','selectPaymentWay__item-circle--active')
+      }
+      methodType.value = Type
+      addClass(Wrapper,'selectPaymentWay__item--active')
+      addClass(circleClass,'selectPaymentWay__item-circle--active')
+      
+
+    }
     const isElementExist = (
       className,
       options = {
@@ -700,6 +718,10 @@ createApp({
         el.style.height =
           el.querySelector(".question-title").scrollHeight + 10 + "px";
     }
+    const chekcout = (Plan)=>{
+      console.log(Plan)
+      PlanToShop.value = Plan
+    }
     const handlePlanType = (type)=>{
       console.log(type)
       if(type == 10){
@@ -719,7 +741,19 @@ createApp({
       // ToLocaleStringNumbers("seclecPlan-box__priceBox-text");
      
     }
+    
     onMounted(() => {
+
+      document.querySelectorAll(`.selectPaymentWay__item`).forEach(i=>{
+        i.addEventListener('click',()=>{
+          if(isElementExist('selectPaymentWay__item--active').message == 'ok'){
+            removeClass('selectPaymentWay__item--active','selectPaymentWay__item--active')
+          }
+          i.classList.add('selectPaymentWay__item--active')
+          methodType.value = i.getAttribute('priceType')
+          console.log(methodType)
+        })
+      })
       document
         .querySelectorAll(`.${selectPlanNumberClass.value}`)
         .forEach((item) => {
@@ -782,20 +816,23 @@ createApp({
       ) {
       }
     });
+   function getlog (){
+    console.log('cliedk')
+   }
     // return values
     return {
+      getlog,
       onOpenMenu,
       onCloseMenu,
       addClass,
       removeClass,
       isElementExist,
+      pymentType,
       Plans,
-      OneMont,
-      OneYears,
-      ThreeMonth,
-      SixsMonth,
+      chekcout,
       handlePlanType,
-      CurrentPlans
+      CurrentPlans,
+     
     };
   },
 }).mount("#app");

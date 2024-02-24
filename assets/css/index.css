@@ -105,6 +105,7 @@ html {
 }
 .orange-text {
   text-align: right;
+  font-size: 0.9rem;
 }
 .header__middle__img-box {
   position: absolute;
@@ -160,7 +161,8 @@ html {
 
 .header__bottom__services-wrapper__box img {
   display: block;
-  max-width: 150px;
+  max-width: 70px;
+  width: 60px;
   margin: 0 auto;
 }
 
@@ -288,10 +290,11 @@ html {
   font-size: 2rem;
 }
 .secondStep {
-  margin: auto;
+  margin: auto 0.4rem;
   color: black;
   font-weight: 900;
   font-size: 1.2rem;
+
 }
 .seclecPlan-titleWRapper__leftContent {
   /* flex-wrap: wrap; */
@@ -746,7 +749,8 @@ footer {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-around;  
+  font-size: 0.8rem;
 
   border-radius: 1rem;
   background-color: var(--primary);
@@ -783,7 +787,9 @@ footer {
 .seccondStep-box__LeftContent {
   display: flex;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: auto 0.9rem;
   flex-wrap: wrap;
 }
@@ -841,6 +847,7 @@ footer {
   width: 3rem;
   color: var(--primary);
   margin: auto 0.8rem;
+  font-size: 0.7rem;
 }
 .plan-types__items-subtitle,
 .plan-types__items-title {
@@ -957,3 +964,51 @@ footer {
   font-family: "IranSans-Light";
 }
 /* end of comment slide */
+.selectPaymentWay{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.selectPaymentWay__item{
+  background-color: rgb(255, 255, 255);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  margin: 0.2rem 0.2rem;
+  border-radius: 1rem;
+  padding: 0.2rem 0.9rem;
+  cursor: pointer;
+  transition: all 0.6s ease;
+}
+.selectPaymentWay__item-circle{
+  width: 0.8rem;
+  height: 0.8rem;
+  transition: all 0.6s ease;
+
+  border-radius: 100%;
+  background-color: rgb(201, 201, 201);
+  border: 1px solid rgb(255, 72, 0);
+}
+.selectPaymentWay__title{
+  color: white;
+  font-weight: 900;
+}
+.selectPaymentWay__item-logo{
+  width: 1.6rem;
+  margin-right: 0.9rem;
+  height: 1.6rem;
+}
+.selectPaymentWay__item-text{
+  margin: auto 0.4rem;
+}
+.selectPaymentWay__item--active{
+  background-color: rgb(255, 72, 0);
+  box-shadow: 0 0 1rem rgb(80, 43, 37);
+  color: white;
+}
+.selectPaymentWay__item--active .selectPaymentWay__item-circle{
+  background-color: rgb(218, 138, 114);
+
+}
