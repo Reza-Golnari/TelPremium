@@ -1,14 +1,9 @@
 /* start of desktop navbar */
-html {
-  direction: rtl;
-  user-select: var(--primary);
-}
+
 #app {
   position: relative;
   width: 100%;
-
   overflow-x: hidden;
-
   z-index: 3;
 }
 

@@ -24,6 +24,11 @@
   src: url("../fonts/sans/IRANSansWeb_Light.woff2") format(woff2);
 }
 
+html {
+  direction: rtl;
+  user-select: var(--primary);
+}
+
 /* reset */
 * {
   margin: 0;

@@ -538,14 +538,6 @@ createApp({
         .classList.remove(responsiveMenuClassNameActive.value);
     };
 
-    function setBoxHeight(el) {
-      const height = el.scrollHeight.toString() + "px";
-      if (el.classList.contains("question-box--active"))
-        el.style.height = height;
-      else
-        el.style.height =
-          el.querySelector(".question-title").scrollHeight + 10 + "px";
-    }
     function convertNumber(fromNum) {
       var result;
       var arabicMap = {
@@ -654,40 +646,40 @@ createApp({
           });
         });
 
-      function questionBoxHandler() {
-        document.querySelectorAll(".question-box").forEach((box) => {
-          box.style.height =
-            box.querySelector(".question-title").scrollHeight + 10 + "px";
-          box.removeEventListener("click", boxHandler);
-          box.addEventListener("click", boxHandler);
-        });
-      }
-      questionBoxHandler();
+      // function questionBoxHandler() {
+      //   document.querySelectorAll(".question-box").forEach((box) => {
+      //     box.style.height =
+      //       box.querySelector(".question-title").scrollHeight + 10 + "px";
+      //     box.removeEventListener("click", boxHandler);
+      //     box.addEventListener("click", boxHandler);
+      //   });
+      // }
+      // questionBoxHandler();
 
-      function boxHandler() {
-        if (
-          document.querySelector(".question-box--active") &&
-          !this.classList.contains("question-box--active")
-        ) {
-          console.log(
-            document.querySelector(".question-box--active .question-title")
-              .scrollHeight
-          );
-          document.querySelector(".question-box--active").style.height =
-            document.querySelector(".question-box--active .question-title")
-              .scrollHeight +
-            10 +
-            "px";
-          document
-            .querySelector(".question-box--active")
-            .classList.remove("question-box--active");
-        }
+      // function boxHandler() {
+      //   if (
+      //     document.querySelector(".question-box--active") &&
+      //     !this.classList.contains("question-box--active")
+      //   ) {
+      //     console.log(
+      //       document.querySelector(".question-box--active .question-title")
+      //         .scrollHeight
+      //     );
+      //     document.querySelector(".question-box--active").style.height =
+      //       document.querySelector(".question-box--active .question-title")
+      //         .scrollHeight +
+      //       10 +
+      //       "px";
+      //     document
+      //       .querySelector(".question-box--active")
+      //       .classList.remove("question-box--active");
+      //   }
 
-        this.classList.toggle("question-box--active");
-        setBoxHeight(this);
-      }
+      //   this.classList.toggle("question-box--active");
+      //   setBoxHeight(this);
+      // }
 
-      window.addEventListener("resize", questionBoxHandler);
+      // window.addEventListener("resize", questionBoxHandler);
 
       if (
         isElementExist("seclecPlan-box__priceBox-text", {
@@ -743,29 +735,3 @@ createApp({
     };
   },
 }).mount("#app");
-
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 3,
-  spaceBetween: 30,
-  loop: true,
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-    // when window width is >= 480px
-    480: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-    // when window width is >= 640px
-    640: {
-      slidesPerView: 2,
-      spaceBetween: 10,
-    },
-    1000: {
-      slidesPerView: 3,
-    },
-  },
-});
