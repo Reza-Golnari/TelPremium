@@ -1,0 +1,59 @@
+.desktop-navbar {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.desktop-navbar__number-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+  column-gap: 5px;
+  background-color: var(--primary);
+  padding: 10px;
+  border-radius: 20px;
+  color: #eee;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.desktop-navbar__number-box svg {
+  width: 25px;
+}
+
+.desktop-navbar__item-box {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  flex-direction: row-reverse;
+}
+
+.desktop-navbar__item-box__logo img {
+  width: 50px;
+}
+
+.desktop-navbar__item-box__menu {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  column-gap: 10px;
+  margin-bottom: 0;
+}
+
+.desktop-navbar__item-box__menu li {
+  padding-inline: 5px;
+}
+
+.desktop-navbar__item-box__menu a {
+  color: #333;
+  opacity: 80%;
+  transition: opacity 0.2s;
+}
+
+.desktop-navbar__item-box__menu a:hover {
+  opacity: 1;
+}
+/* end of desktop navbar */
