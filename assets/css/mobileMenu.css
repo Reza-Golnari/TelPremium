@@ -1,0 +1,58 @@
+/* responsive menu styles  */
+
+.responsive-Menu {
+  width: 80%;
+  border-top-left-radius: 0.8rem;
+  border-bottom-left-radius: 0.8rem;
+
+  background-color: var(--gray);
+  height: 100vh;
+  display: flex;
+  transition: all 0.8rem;
+  flex-direction: column;
+  direction: rtl;
+  box-shadow: 0 0 1rem rgb(175, 175, 175);
+  padding: 0.7rem 1.7rem;
+}
+.responsive-Menu__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.responsive-Menu__list-item--link {
+  display: block;
+  margin-top: 2rem;
+  color: black;
+}
+.responsive-Menu__list-item--link:hover {
+  color: var(--primary);
+}
+.responsive-menuButton {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0.3rem;
+}
+.responsive-menuButton svg {
+  width: 3rem;
+  transform: rotate(180deg);
+  color: var(--primary-dark);
+}
+
+/* End responsive menu styles  */
+
+/* end of header */
+.responsiveMenu-container {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  direction: rtl;
+  right: -10000rem;
+  justify-content: flex-start;
+  background-color: rgba(240, 239, 239, 0.452);
+  z-index: 9999;
+}
+.responsive-Menu--active {
+  right: 0;
+}

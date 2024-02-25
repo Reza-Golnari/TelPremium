@@ -36,7 +36,6 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   font-family: "IranSans";
-
 }
 
 a {
@@ -49,4 +48,9 @@ a:hover {
 
 li {
   list-style-type: none;
+}
+
+.font-size-20 {
+  font-size: 0.9rem;
+  text-align: center;
 }

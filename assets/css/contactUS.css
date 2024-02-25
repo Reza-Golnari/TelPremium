@@ -1,0 +1,52 @@
+/* start of contact */
+.contact-section__container {
+  margin-inline: auto;
+  width: 90%;
+  background: url("../img/support-right.svg") bottom right no-repeat,
+    url("../img/support-left.svg") top left no-repeat var(--primary);
+  padding: 30px 10px;
+  border-radius: 20px;
+  color: white;
+  align-items: center;
+}
+
+.contact-section__container__number-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+  column-gap: 5px;
+  background-color: transparent;
+
+  padding: 10px;
+  border-radius: 20px;
+  color: #eee;
+  border: 1px solid #eee;
+  font-size: 0.9rem;
+}
+
+.contact-section__container__number-box svg {
+  width: 20px;
+}
+
+.contact-section__container__tel-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+  column-gap: 5px;
+  background-color: var(--primary-dark);
+
+  padding: 10px;
+  border-radius: 20px;
+  color: #eee;
+  font-size: 0.9rem;
+}
+
+.contact-section__container__tel-box a {
+  color: white;
+}
+.contact-section__container__tel-box a svg {
+  width: 25px;
+}
+/* end of contact */
