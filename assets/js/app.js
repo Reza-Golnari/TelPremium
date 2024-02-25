@@ -907,26 +907,17 @@ createApp({
     const HandlePay = async ()=>{
         let cellPhone = document.querySelector('.cellphone').value
         let username = document.querySelector('.username').value
-        let paymentMethod = methodType
-        let PlanType = PlanToShop
+        let paymentMethod = methodType.value
+        let PlanType = PlanToShop.value.planType
+        console.log(PlanType,paymentMethod,username,cellPhone)
         console.log('waite . . .')
-        await fetch('https://bothosts.org/api/index.php',{
-          method:'post',
-          body: JSON.stringify({
-            username:username,
-            key:'xxxxx',
-            phone_number: cellPhone,
-            method_payment: paymentMethod,
-            plan: PlanType
-        }),
-         
-        // Adding headers to the request
-        headers: {
-            "Content-type": "application/json; charset=UTF-8",
-            "auth": 'xxxxx'
-        }
-        }).then(respo=>respo.json()).then(data=>{
+        axios.get(`https://bothosts.org/apiv2/index.php?key=xxxxxxx&username=${username}&phone_number=${cellPhone}&payment_method=${paymentMethod}&pla
+         n=${PlanType}`,{
+          headers: {"Access-Control-Allow-Origin": "*"}
+         }).then(data=>{
           console.log(data)
+        }).catch((err)=>{
+            console.log(err)
         })
        
     }
