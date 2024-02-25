@@ -122,6 +122,9 @@
   }
 }
 @media screen and (max-width: 576px) {
+  .input-container {
+    flex-direction: column;
+  }
   .plan-modal__container {
     transform: scale(0.8);
   }
