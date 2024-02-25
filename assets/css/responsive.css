@@ -12,6 +12,7 @@
 @media screen and (max-width: 992px) {
   .about-container {
     flex-direction: column;
+    align-items: center;
   }
   .rev-direction-col-992 {
     flex-direction: column;
