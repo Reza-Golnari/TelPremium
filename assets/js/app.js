@@ -6,243 +6,22 @@ createApp({
   setup() {
     const responsiveMenuClassName = ref("responsiveMenu-container");
     const responsiveMenuClassNameActive = ref("responsive-Menu--active");
-    const methodType = ref('zarinpal')
-    const isError = ref(false)
-    const PlanToShop = ref({})
+    const methodType = ref("zarinpal");
+    const isError = ref(false);
+    const PlanToShop = ref({});
     const defaultPlan = ref({
-      price:"مطابق با پلن شما",
-      time:"اشتراک پرمیوم",
-      ex:"مطابق با پلن شما",
+      price: "مطابق با پلن شما",
+      time: "اشتراک پرمیوم",
+      ex: "مطابق با پلن شما",
       timeToActive: "مطابق با پلن شما",
-      planType:'',
-
-    })
+      planType: "",
+    });
     const CurrentPlans = ref([
       {
         time: "سه ماهه",
-        month:3,
-        timeToActive:" 1 الی 30 دقیقه",
-        planType:'threemonth',
-        price: "870000",
-        options: [
-          { Text: "بدون نیاز به لاگین در اکانت شما", active: true },
-          { Text: "فعال سازی روی اکانت شخصی", active: true },
-
-          
-
-          {
-            Text: `
-          قابل تمدید و کاملا قانونی
-
-`,
-            active: true,
-          },
-
-          {
-            Text: `
-          چهار بوست هدیه
-
-`,
-            active: true,
-          },
-
-          {
-            Text: `
-          کاملا امن و تضمین شده
-`,
-            active: true,
-          },
-
-          {
-            Text: `
-          تحویل سریع بین 1 الی 30 دقیقه
-
-`,
-            active: true,
-          },
-          {
-            Text: `
-
-          فعالسازی روی شماره ایران و غیر ایران
-
-
-
-`,
-            active: true,
-          },
-        ],
-      },
-      {
-        time: "شش ماه",
-        month:6,
-        timeToActive:" 1 الی 30 دقیقه",
-        planType:'sixmonth',
-
-        price: "1270000",
-        options: [
-          { Text: "بدون نیاز به لاگین در اکانت شما", active: true },
-        
-          { Text: "فعال سازی روی اکانت شخصی", active: true },
-
-          {
-            Text: `
-          قابل تمدید و کاملا قانونی
-
-`,
-            active: true,
-          },
-
-          {
-            Text: `
-          چهار بوست هدیه
-
-`,
-            active: true,
-          },
-
-          {
-            Text: `
-          کاملا امن و تضمین شده
-`,
-            active: true,
-          },
-
-          {
-            Text: `
-          تحویل سریع بین 1 الی 30 دقیقه
-
-`,
-            active: true,
-          },
-          {
-            Text: `
-
-          فعالسازی روی شماره ایران و غیر ایران
-
-
-
-`,
-            active: true,
-          },
-        ],
-      },
-      {
-        time: "یک ساله",
-        price: "1950000",
-        timeToActive:" 1 الی 30 دقیقه",
-        planType:'twelvemonth',
-        
-        month:12,
-        options: [
-          { Text: "بدون نیاز به لاگین در اکانت شما", active: true },
-          { Text: "فعال سازی روی اکانت شخصی", active: true },
-        
-
-          {
-            Text: `
-          قابل تمدید و کاملا قانونی
-
-`,
-            active: true,
-          },
-
-          {
-            Text: `
-          چهار بوست هدیه
-
-`,
-            active: true,
-          },
-
-          {
-            Text: `
-          کاملا امن و تضمین شده
-`,
-            active: true,
-          },
-
-          {
-            Text: `
-          تحویل سریع بین 1 الی 30 دقیقه
-
-`,
-            active: true,
-          },
-          {
-            Text: `
-
-          فعالسازی روی شماره ایران و غیر ایران
-
-
-
-`,
-            active: true,
-          },
-        ],
-      },
-      {
-        time: "یک ماهه",
-        price: "300000",
-        timeToActive:" 1 الی 5 دقیقه",
-        planType:'threemonth',
-      
-        month:1,
-        planType:'onemonth',
-
-        options: [
-          { Text: "نیاز به لاگین در اکانت شما", active: false },
-         
-          { Text: "فعال سازی روی اکانت شخصی", active: true },
-        
-          {
-            Text: `
-          قابل تمدید و کاملا قانونی
-
-`,
-            active: true,
-          },
-
-          {
-            Text: `
-          چهار بوست هدیه
-
-`,
-            active: true,
-          },
-
-          {
-            Text: `
-          کاملا امن و تضمین شده
-`,
-            active: true,
-          },
-
-          {
-            Text: `
-          تحویل سریع بین 1 الی 30 دقیقه
-
-`,
-            active: true,
-          },
-          {
-            Text: `
-
-          فعالسازی روی شماره ایران و غیر ایران
-
-
-
-`,
-            active: true,
-          },
-        ],
-      },
-    ])
-    const Plans = ref([
-      {
-        time: "سه ماهه",
-        timeToActive:" 1 الی 30 دقیقه",
-        month:3,
-        planType:'threemonth',
+        month: 3,
+        timeToActive: " 1 الی 30 دقیقه",
+        planType: "threemonth",
         price: "870000",
         options: [
           { Text: "بدون نیاز به لاگین در اکانت شما", active: true },
@@ -292,15 +71,14 @@ createApp({
       },
       {
         time: "شش ماه",
-        month:6,
-        planType:'sixmonth',
-
-        timeToActive:" 1 الی 30 دقیقه",
+        month: 6,
+        timeToActive: " 1 الی 30 دقیقه",
+        planType: "sixmonth",
 
         price: "1270000",
         options: [
           { Text: "بدون نیاز به لاگین در اکانت شما", active: true },
-       
+
           { Text: "فعال سازی روی اکانت شخصی", active: true },
 
           {
@@ -348,14 +126,14 @@ createApp({
       {
         time: "یک ساله",
         price: "1950000",
-        planType:'twelvemonth',
-        timeToActive:" 1 الی 30 دقیقه",
+        timeToActive: " 1 الی 30 دقیقه",
+        planType: "twelvemonth",
 
-        month:12,
+        month: 12,
         options: [
           { Text: "بدون نیاز به لاگین در اکانت شما", active: true },
-        
           { Text: "فعال سازی روی اکانت شخصی", active: true },
+
           {
             Text: `
           قابل تمدید و کاملا قانونی
@@ -400,17 +178,17 @@ createApp({
       },
       {
         time: "یک ماهه",
-        timeToActive:" 1 الی 5 دقیقه",
-        planType:'threemonth',
-
         price: "300000",
-        month:1,
+        timeToActive: " 1 الی 5 دقیقه",
+        planType: "threemonth",
+
+        month: 1,
+        planType: "onemonth",
 
         options: [
           { Text: "نیاز به لاگین در اکانت شما", active: false },
-          { Text: "فعال سازی روی اکانت شخصی", active: true },
 
-         
+          { Text: "فعال سازی روی اکانت شخصی", active: true },
 
           {
             Text: `
@@ -455,70 +233,17 @@ createApp({
         ],
       },
     ]);
-    const OneMont = ref ([
+    const Plans = ref([
       {
-        time: "یک ماهه",
-        price: "300000",
-        options: [
-          { Text: "نیاز به لاگین در اکانت شما", active: false },
-          { Text: "فعال سازی روی اکانت شخصی", active: true },
-
-          { Text: "بدون نیاز به لاگین در اکانت شما", active: true },
-
-          {
-            Text: `
-          قابل تمدید و کاملا قانونی
-
-`,
-            active: true,
-          },
-
-          {
-            Text: `
-          چهار بوست هدیه
-
-`,
-            active: true,
-          },
-
-          {
-            Text: `
-          کاملا امن و تضمین شده
-`,
-            active: true,
-          },
-
-          {
-            Text: `
-          تحویل سریع بین 1 الی 30 دقیقه
-
-`,
-            active: true,
-          },
-          {
-            Text: `
-
-          فعالسازی روی شماره ایران و غیر ایران
-
-
-
-`,
-            active: true,
-          },
-        ],
-      },
-    ])
-    const ThreeMonth = ref(
-      {
-      
         time: "سه ماهه",
+        timeToActive: " 1 الی 30 دقیقه",
+        month: 3,
+        planType: "threemonth",
         price: "870000",
         options: [
           { Text: "بدون نیاز به لاگین در اکانت شما", active: true },
           { Text: "فعال سازی روی اکانت شخصی", active: true },
 
-          { Text: "بدون نیاز به لاگین در اکانت شما", active: true },
-
           {
             Text: `
           قابل تمدید و کاملا قانونی
@@ -561,16 +286,18 @@ createApp({
           },
         ],
       },
-    )
-    const SixsMonth = ref([
       {
         time: "شش ماه",
+        month: 6,
+        planType: "sixmonth",
+
+        timeToActive: " 1 الی 30 دقیقه",
+
         price: "1270000",
         options: [
           { Text: "بدون نیاز به لاگین در اکانت شما", active: true },
-          { Text: "فعال سازی روی اکانت شخصی", active: true },
 
-        
+          { Text: "فعال سازی روی اکانت شخصی", active: true },
 
           {
             Text: `
@@ -614,16 +341,17 @@ createApp({
           },
         ],
       },
-    ])
-    const OneYears = ref([
       {
         time: "یک ساله",
-        price: 1950000,
+        price: "1950000",
+        planType: "twelvemonth",
+        timeToActive: " 1 الی 30 دقیقه",
+
+        month: 12,
         options: [
           { Text: "بدون نیاز به لاگین در اکانت شما", active: true },
-          { Text: "فعال سازی روی اکانت شخصی", active: true },
 
-         
+          { Text: "فعال سازی روی اکانت شخصی", active: true },
           {
             Text: `
           قابل تمدید و کاملا قانونی
@@ -666,7 +394,61 @@ createApp({
           },
         ],
       },
-    ])
+      {
+        time: "یک ماهه",
+        timeToActive: " 1 الی 5 دقیقه",
+        planType: "threemonth",
+
+        price: "300000",
+        month: 1,
+
+        options: [
+          { Text: "نیاز به لاگین در اکانت شما", active: false },
+          { Text: "فعال سازی روی اکانت شخصی", active: true },
+
+          {
+            Text: `
+          قابل تمدید و کاملا قانونی
+
+`,
+            active: true,
+          },
+
+          {
+            Text: `
+          چهار بوست هدیه
+
+`,
+            active: true,
+          },
+
+          {
+            Text: `
+          کاملا امن و تضمین شده
+`,
+            active: true,
+          },
+
+          {
+            Text: `
+          تحویل سریع بین 1 الی 30 دقیقه
+
+`,
+            active: true,
+          },
+          {
+            Text: `
+
+          فعالسازی روی شماره ایران و غیر ایران
+
+
+
+`,
+            active: true,
+          },
+        ],
+      },
+    ]);
     const selectPlanNumberClass = ref(
       "seclecPlan-titleWRapper__leftContent-item"
     );
@@ -682,21 +464,27 @@ createApp({
     const selectAll = (className) => {
       return document.querySelectorAll(className);
     };
-    const pymentType = (Wrapper,Type,circleClass)=>{
-      console.log('clicked')
-     
-      if(isElementExist('selectPaymentWay__item--active').message == 'ok'){
-        removeClass('selectPaymentWay__item--active','selectPaymentWay__item--active')
-      }
-      if(isElementExist('selectPaymentWay__item-circle--active').message == 'ok'){
-        removeClass('selectPaymentWay__item-circle--active','selectPaymentWay__item-circle--active')
-      }
-      methodType.value = Type
-      addClass(Wrapper,'selectPaymentWay__item--active')
-      addClass(circleClass,'selectPaymentWay__item-circle--active')
-      
+    const pymentType = (Wrapper, Type, circleClass) => {
+      console.log("clicked");
 
-    }
+      if (isElementExist("selectPaymentWay__item--active").message == "ok") {
+        removeClass(
+          "selectPaymentWay__item--active",
+          "selectPaymentWay__item--active"
+        );
+      }
+      if (
+        isElementExist("selectPaymentWay__item-circle--active").message == "ok"
+      ) {
+        removeClass(
+          "selectPaymentWay__item-circle--active",
+          "selectPaymentWay__item-circle--active"
+        );
+      }
+      methodType.value = Type;
+      addClass(Wrapper, "selectPaymentWay__item--active");
+      addClass(circleClass, "selectPaymentWay__item-circle--active");
+    };
     const isElementExist = (
       className,
       options = {
@@ -753,95 +541,91 @@ createApp({
     function convertNumber(fromNum) {
       var result;
       var arabicMap = {
-          '١۲':12,
-          '١١':11,
-          '١٠': 10,
-          '٩': 9,
-          '٨': 8,
-          '٧': 7,
-          '٦': 6,
-          '٥': 5,
-          '٤': 4,
-          '٣': 3,
-          '٢': 2,
-          '١': 1,
-          '٠': 0
+        "١۲": 12,
+        "١١": 11,
+        "١٠": 10,
+        "٩": 9,
+        "٨": 8,
+        "٧": 7,
+        "٦": 6,
+        "٥": 5,
+        "٤": 4,
+        "٣": 3,
+        "٢": 2,
+        "١": 1,
+        "٠": 0,
       };
       result = arabicMap[fromNum];
       if (result === undefined) {
-          result = -1;
+        result = -1;
       }
       return result;
-  }
-  
- 
-    
-    const chekcout = (Plan)=>{
-    
-      PlanToShop.value = Plan
-      let defPrice = PlanToShop.value.price
-      let ex = Number(PlanToShop.value.month)
-      let tim = PlanToShop.value.time
-      let activeTie = PlanToShop.value.timeToActive
-      let today = new Date().toLocaleDateString('fa-IR');     
-      let CurrentDate = today.split('/')[1]
-      console.log(convertNumber(CurrentDate))
-      let ExYear = today.split('/')[0]
-      let ExDay = today.split('/')[2]
+    }
 
-      let ExMonth = Number(digitsFaToEn(CurrentDate)) + Number(ex)
-      
-      if(ExMonth>12){
-        ExMonth = ExMonth - 12
-        ExYear = Number(digitsFaToEn(ExYear)) + 1
+    const chekcout = (Plan) => {
+      PlanToShop.value = Plan;
+      let defPrice = PlanToShop.value.price;
+      let ex = Number(PlanToShop.value.month);
+      let tim = PlanToShop.value.time;
+      let activeTie = PlanToShop.value.timeToActive;
+      let today = new Date().toLocaleDateString("fa-IR");
+      let CurrentDate = today.split("/")[1];
+      console.log(convertNumber(CurrentDate));
+      let ExYear = today.split("/")[0];
+      let ExDay = today.split("/")[2];
+
+      let ExMonth = Number(digitsFaToEn(CurrentDate)) + Number(ex);
+
+      if (ExMonth > 12) {
+        ExMonth = ExMonth - 12;
+        ExYear = Number(digitsFaToEn(ExYear)) + 1;
       }
-      let ExFinal = `${ExYear}/${ExMonth}/${ExDay}`
-      console.log(methodType)
+      let ExFinal = `${ExYear}/${ExMonth}/${ExDay}`;
+      console.log(methodType);
       defaultPlan.value = {
-        price:Number(defPrice).toLocaleString(),
-  time:`   اشتراک پرمیوم  ${tim}`,
-  ex:` از ${digitsEnToFa(today)} تا ${digitsEnToFa(ExFinal)}`,
-  timeToActive: `
+        price: Number(defPrice).toLocaleString(),
+        time: `   اشتراک پرمیوم  ${tim}`,
+        ex: ` از ${digitsEnToFa(today)} تا ${digitsEnToFa(ExFinal)}`,
+        timeToActive: `
  
   ${PlanToShop.value.timeToActive}
   `,
-  planType:PlanToShop.value.planType
+        planType: PlanToShop.value.planType,
+      };
+    };
+    const handlePlanType = (type) => {
+      console.log(type);
+      if (type == 10) {
+        CurrentPlans.value = Plans.value;
+        console.log(CurrentPlans);
+      } else {
+        let newArray = Plans.value.filter((item) => {
+          return item.month === type;
+        });
+        console.log(newArray);
 
-      }
-    }
-    const handlePlanType = (type)=>{
-      console.log(type)
-      if(type == 10){
-        CurrentPlans.value = Plans.value
-        console.log(CurrentPlans)
-      }else{
-        let newArray = Plans.value.filter((item)=>{
-          return item.month === type
-         })
-         console.log(newArray)
-         
-
-          CurrentPlans.value = newArray
-        console.log(CurrentPlans.value,"current Plabs")
-
+        CurrentPlans.value = newArray;
+        console.log(CurrentPlans.value, "current Plabs");
       }
       // ToLocaleStringNumbers("seclecPlan-box__priceBox-text");
-     
-    }
-    
-    onMounted(() => {
+    };
 
-      document.querySelectorAll(`.selectPaymentWay__item`).forEach(i=>{
-        i.addEventListener('click',()=>{
-          if(isElementExist('selectPaymentWay__item--active').message == 'ok'){
-            removeClass('selectPaymentWay__item--active','selectPaymentWay__item--active')
+    onMounted(() => {
+      document.querySelectorAll(`.selectPaymentWay__item`).forEach((i) => {
+        i.addEventListener("click", () => {
+          if (
+            isElementExist("selectPaymentWay__item--active").message == "ok"
+          ) {
+            removeClass(
+              "selectPaymentWay__item--active",
+              "selectPaymentWay__item--active"
+            );
           }
-          i.classList.add('selectPaymentWay__item--active')
-          methodType.value = i.getAttribute('priceType')
-          console.log(PlanToShop.value.price)
-         
-        })
-      })
+          i.classList.add("selectPaymentWay__item--active");
+          methodType.value = i.getAttribute("priceType");
+          console.log(PlanToShop.value.price);
+        });
+      });
       document
         .querySelectorAll(`.${selectPlanNumberClass.value}`)
         .forEach((item) => {
@@ -904,38 +688,28 @@ createApp({
       ) {
       }
     });
-    const HandlePay = async ()=>{
-        let cellPhone = document.querySelector('.cellphone').value
-        let username = document.querySelector('.username').value
-        let paymentMethod = methodType
-        let PlanType = PlanToShop
-        console.log('waite . . .')
-        await fetch('https://bothosts.org/api/index.php',{
-          method:'post',
-          body: JSON.stringify({
-            username:username,
-            key:'xxxxx',
-            phone_number: cellPhone,
-            method_payment: paymentMethod,
-            plan: PlanType
-        }),
-         
-        // Adding headers to the request
-        headers: {
-            "Content-type": "application/json; charset=UTF-8",
-            "auth": 'xxxxx'
-        }
-        }).then(respo=>respo.json()).then(data=>{
-          console.log(data)
+    const HandlePay = async () => {
+      let cellPhone = document.querySelector(".cellphone").value;
+      let username = document.querySelector(".username").value;
+      let paymentMethod = methodType;
+      let PlanType = PlanToShop;
+      console.log("waite . . .");
+      await axios(
+        `https://bothosts.org/apiv2/index.php?key=xxxxxxx&username=${username}&phone_number=${cellPhone}&payment_method=${paymentMethod}&plan=${PlanType}`
+      )
+        .then((res) => {
+          if (res.ok) {
+            window.href = res.link;
+          }
         })
-       
+        .catch((err) => console.log(err));
+    };
+    const closeNotif = () => {
+      isError.value = false;
+    };
+    function getlog() {
+      console.log("cliedk");
     }
-    const closeNotif = ()=>{
-      isError.value = false
-    }
-   function getlog (){
-    console.log('cliedk')
-   }
     // return values
     return {
       HandlePay,
@@ -953,8 +727,7 @@ createApp({
       handlePlanType,
       CurrentPlans,
       defaultPlan,
-      PlanToShop
-     
+      PlanToShop,
     };
   },
 }).mount("#app");
