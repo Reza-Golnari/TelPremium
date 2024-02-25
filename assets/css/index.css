@@ -294,7 +294,6 @@ html {
   color: black;
   font-weight: 900;
   font-size: 1.2rem;
-
 }
 .seclecPlan-titleWRapper__leftContent {
   /* flex-wrap: wrap; */
@@ -326,14 +325,17 @@ html {
   display: flex;
   flex-direction: column;
   margin-top: 1.8rem;
-  transition: all 0.4s ;
+  transition: all 0.4s;
 
   animation: AnimatedBox 0.8s infinite;
 }
 @keyframes AnimatedBox {
-  0%{margin-left: -4rem;}
-  100%{margin-left: 0;}
-  
+  0% {
+    margin-left: -4rem;
+  }
+  100% {
+    margin-left: 0;
+  }
 }
 .seclecPlan-box__banner {
   width: 100%;
@@ -749,7 +751,7 @@ footer {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;  
+  justify-content: space-around;
   font-size: 0.8rem;
 
   border-radius: 1rem;
@@ -964,14 +966,14 @@ footer {
   font-family: "IranSans-Light";
 }
 /* end of comment slide */
-.selectPaymentWay{
+.selectPaymentWay {
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
   margin-top: 1rem;
 }
-.selectPaymentWay__item{
+.selectPaymentWay__item {
   background-color: rgb(255, 255, 255);
   backdrop-filter: blur(20px);
   display: flex;
@@ -982,7 +984,7 @@ footer {
   cursor: pointer;
   transition: all 0.6s ease;
 }
-.selectPaymentWay__item-circle{
+.selectPaymentWay__item-circle {
   width: 0.8rem;
   height: 0.8rem;
   transition: all 0.6s ease;
@@ -991,31 +993,30 @@ footer {
   background-color: rgb(201, 201, 201);
   border: 1px solid rgb(255, 72, 0);
 }
-.selectPaymentWay__title{
+.selectPaymentWay__title {
   color: white;
   font-weight: 900;
 }
-.selectPaymentWay__item-logo{
+.selectPaymentWay__item-logo {
   width: 1.6rem;
   margin-right: 0.9rem;
   height: 1.6rem;
 }
-.selectPaymentWay__item-text{
+.selectPaymentWay__item-text {
   margin: auto 0.4rem;
 }
-.selectPaymentWay__item--active{
+.selectPaymentWay__item--active {
   background-color: rgb(255, 72, 0);
   box-shadow: 0 0 1rem rgb(80, 43, 37);
   color: white;
 }
-.selectPaymentWay__item--active .selectPaymentWay__item-circle{
+.selectPaymentWay__item--active .selectPaymentWay__item-circle {
   background-color: rgb(218, 138, 114);
-
 }
-.notifcation{
+.notifcation {
   position: fixed;
   top: 1rem;
- 
+
   z-index: 999;
   display: flex;
   align-items: center;
@@ -1025,12 +1026,77 @@ footer {
   right: 1rem;
   box-shadow: 0rem 0.4rem 1rem rgb(122, 122, 122);
 }
-.notifcation-text{
+.notifcation-text {
   margin: auto 0.6rem;
   color: white;
 }
-.notifcation svg{
+.notifcation svg {
   color: white;
   width: 2.34rem;
   cursor: pointer;
 }
+/* start of modal */
+.plan-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.plan-modal.show {
+  display: flex;
+  opacity: 1;
+}
+
+.plan-modal__container {
+  width: 400px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.plan-modal__img {
+  width: 40px;
+  height: 40px;
+}
+
+.panel-modal__submit-text {
+  color: var(--primary);
+}
+
+.plan-modal__button-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.plan-modal__close-btn {
+  outline: none;
+  border: none;
+  background-color: var(--gray);
+  padding: 10px;
+  color: rgba(0, 0, 0, 0.521);
+  cursor: pointer;
+  border-radius: 20px;
+}
+.plan-modal__link {
+  background-color: var(--primary);
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.plan-modal__link:hover {
+  color: white;
+}
+/* end of modal */

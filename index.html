@@ -18,18 +18,25 @@
   <body>
     <!-- start of main app -->
     <div id="app">
-      <div class="modal">
-        <div class="modal__container">
-          <div>
+      <div class="plan-modal" :class="{'show' : isShowPlanModal}" @click.self="isShowPlanModal = false">
+        <div class="plan-modal__container">
+          <div class="d-flex gap-2">
             <div>
-              <img src="./assets/img/favicon.png">
+              <img class="plan-modal__img" src="./assets/img/favicon.png">
             </div>
             <div>
-              
+              <p class="plan-modal__user-name mb-0 d-inline font-size-20" dir="ltr">{{ selectedPlan.user.userName }}</p>
+              <p class="font-size-20">{{ selectedPlan.user.phone }}</p>
             </div>
           </div>
-          <div></div>
-          <div></div>
+          <div>
+            <p class="panel-modal__submit-text font-size-20 text-end">حساب کاربری با شماره {{selectedPlan.user.phone}} ثبت شد</p>
+            <p class="panel-modal__sub-text font-size-20 text-end">جهت اتصال به درگاه پرداخت کلیک کنید</p>
+          </div>
+          <div class="plan-modal__button-box text-center">
+            <button class="plan-modal__close-btn w-50" @click="isShowPlanModal = false">بستن</button>
+            <a :href="selectedPlan.link" class="plan-modal__link w-50">پرداخت</a>
+          </div>
         </div>
       </div>
       <div class="notifcation" v-if="isError">

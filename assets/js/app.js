@@ -1,6 +1,6 @@
 /** @format */
 
-const { createApp, ref, onMounted } = Vue;
+const { createApp, ref, onMounted, reactive } = Vue;
 
 createApp({
   setup() {
@@ -8,6 +8,14 @@ createApp({
     const responsiveMenuClassNameActive = ref("responsive-Menu--active");
     const methodType = ref("zarinpal");
     const isError = ref(false);
+    const isShowPlanModal = ref(false);
+    const selectedPlan = reactive({
+      user: {
+        userName: "",
+        phone: "",
+      },
+      link: null,
+    });
     const PlanToShop = ref({});
     const defaultPlan = ref({
       price: "مطابق با پلن شما",
@@ -693,13 +701,15 @@ createApp({
       let username = document.querySelector(".username").value;
       let paymentMethod = methodType;
       let PlanType = PlanToShop;
-      console.log("waite . . .");
       await axios(
         `https://bothosts.org/apiv2/index.php?key=xxxxxxx&username=${username}&phone_number=${cellPhone}&payment_method=${paymentMethod}&plan=${PlanType}`
       )
         .then((res) => {
           if (res.ok) {
-            window.href = res.link;
+            selectedPlan.user.userName = username;
+            selectedPlan.user.phone = cellPhone;
+            selectedPlan.link = res.link;
+            isShowPlanModal.value = true;
           }
         })
         .catch((err) => console.log(err));
@@ -728,6 +738,8 @@ createApp({
       CurrentPlans,
       defaultPlan,
       PlanToShop,
+      selectedPlan,
+      isShowPlanModal,
     };
   },
 }).mount("#app");
