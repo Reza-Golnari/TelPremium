@@ -36,17 +36,21 @@
   flex-direction: row-reverse;
   column-gap: 5px;
   background-color: var(--primary-dark);
-
   padding: 10px;
   border-radius: 20px;
   color: #eee;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .contact-section__container__tel-box a {
   color: white;
 }
 .contact-section__container__tel-box a svg {
-  width: 25px;
+  width: 20px;
 }
 /* end of contact */
+
+.col-6 {
+  padding: 0;
+  padding-right: 5px;
+}

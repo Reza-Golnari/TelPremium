@@ -10,6 +10,9 @@
   }
 }
 @media screen and (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+  }
   .rev-direction-col-992 {
     flex-direction: column;
   }
@@ -22,6 +25,13 @@
   }
 }
 @media screen and (max-width: 806px) {
+  .about-img {
+    width: 200px;
+  }
+  .banner {
+    font-size: 2rem;
+    padding: 20px;
+  }
   .rev-direction-col-806 {
     flex-direction: column;
   }
@@ -145,7 +155,7 @@
   }
   .contact-section__container__tel-box,
   .contact-section__container__number-box {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
   .contact-section__container__tel-box a svg,
   .contact-section__container__number-box a svg {
