@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="./assets/css/Bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/css/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/desktopMenu.css">
+    <link rel="stylesheet" href="./assets/css/mobileMenu.css">
+    <link rel="stylesheet" href="./assets/css/questionBox.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/blogSlider.css">
+    <link rel="stylesheet" href="./assets/css/contactUS.css">
     <link rel="stylesheet" href="./assets/css/index.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
     <!-- vue.js 3 script -->
@@ -18,6 +24,27 @@
   <body>
     <!-- start of main app -->
     <div id="app">
+      <div class="plan-modal" :class="{'show' : isShowPlanModal}" @click.self="isShowPlanModal = false">
+        <div class="plan-modal__container">
+          <div class="d-flex gap-2">
+            <div>
+              <img class="plan-modal__img" src="./assets/img/favicon.png">
+            </div>
+            <div>
+              <p class="plan-modal__user-name mb-0 d-inline font-size-20" dir="ltr">{{ selectedPlan.user.userName }}</p>
+              <p class="font-size-20">{{ selectedPlan.user.phone }}</p>
+            </div>
+          </div>
+          <div>
+            <p class="panel-modal__submit-text font-size-20 text-end">حساب کاربری با شماره {{selectedPlan.user.phone}} ثبت شد</p>
+            <p class="panel-modal__sub-text font-size-20 text-end">جهت اتصال به درگاه پرداخت کلیک کنید</p>
+          </div>
+          <div class="plan-modal__button-box text-center">
+            <button class="plan-modal__close-btn w-50" @click="isShowPlanModal = false">بستن</button>
+            <a :href="selectedPlan.link" class="plan-modal__link w-50">پرداخت</a>
+          </div>
+        </div>
+      </div>
       <div class="notifcation" v-if="isError">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" @click="closeNotif()">
           <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
@@ -42,18 +69,16 @@
           </div>
           <ul class="responsive-Menu__list">
             <li class="responsive-Menu__list-item">
-              <a href="#" class="responsive-Menu__list-item--link"> خانه </a>
-              <a href="#" class="responsive-Menu__list-item--link"
+              <a href="./index.html" class="responsive-Menu__list-item--link"> خانه </a>
+              <a href="./about-us.html" class="responsive-Menu__list-item--link"
                 >در باره ما
               </a>
-              <a href="#" class="responsive-Menu__list-item--link"
+              <a href="./question.html" class="responsive-Menu__list-item--link"
                 >سوالات متداول</a
               >
-              <a href="#" class="responsive-Menu__list-item--link"
-                >شرایط استفاده</a
-              >
-              <a href="#" class="responsive-Menu__list-item--link">وبلاگ</a>
-              <a href="#" class="responsive-Menu__list-item--link"
+             
+              <a href="./services.html" class="responsive-Menu__list-item--link">خدمات ما</a>
+              <a href="./contact-us.html" class="responsive-Menu__list-item--link"
                 >تماس با ما</a
               >
             </li>
@@ -88,12 +113,12 @@
           </div>
           <div class="desktop-navbar__item-box">
             <ul class="desktop-navbar__item-box__menu hide-992">
-              <li><a href="#">خانه</a></li>
-              <li><a href="#">درباره ما</a></li>
-              <li><a href="#">سوالات متداول</a></li>
-              <li><a href="#">شرایط استفاده</a></li>
-              <li><a href="#">وبلاگ</a></li>
-              <li><a href="#">تماس با ما</a></li>
+              <li><a href="./index.html">خانه</a></li>
+              <li><a href="./about-us.html">درباره ما</a></li>
+              <li><a href="./question.html">سوالات متداول</a></li>
+              
+              <li><a href="./services.html">خدمات ما</a></li>
+              <li><a href="./contact-us.html">تماس با ما</a></li>
             </ul>
 
             <div class="desktop-navbar__item-box__logo">
@@ -253,7 +278,7 @@
         <!-- =========================================================================== -->
         <!-- start main section -->
         <main class="main">
-          <section class="seclecPlan">
+          <section class="seclecPlan" id="checkout2">
             <div class="container">
               <div class="seclecPlan-titleWRapper">
                 <div class="seclecPlan-titleWRapper__rightContent">
@@ -1162,11 +1187,11 @@
                 <div>
                   <h6>لینک های مفید</h6>
                   <ul class="footer__quick-access">
-                    <li class="my-1"><a href="#">شرایط استفاده</a></li>
-                    <li class="my-1"><a href="#">درباره ما</a></li>
-                    <li class="my-1"><a href="#">تماس با ما</a></li>
-                    <li class="my-1"><a href="#">سوالات متداول</a></li>
-                    <li class="my-1"><a href="#">بلاگ</a></li>
+                    <li class="my-1"><a href="./rules.html">شرایط استفاده</a></li>
+                    <li class="my-1"><a href="./about-us.html">درباره ما</a></li>
+                    <li class="my-1"><a href="./contact-us.html">تماس با ما</a></li>
+                    <li class="my-1"><a href="./question.html">سوالات متداول</a></li>
+                    <li class="my-1"><a href="./blog.html">بلاگ</a></li>
                   </ul>
                 </div>
               </div>
@@ -1256,6 +1281,9 @@ https://cdn.jsdelivr.net/npm/persian-tools@0.0.5/dist/persian-tools.umd.min.js
 "></script>
     <script src="./assets/js/axios/axios.min.js"></script>
     <script src="./assets/js/SwiperSlider/swiper-bundle.min.js"></script>
+    <script src="./assets/js/axios/axios.min.js"></script>
     <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/questionBox.js"></script>
+    <script src="./assets/js/blogSlider.js"></script>
   </body>
 </html>

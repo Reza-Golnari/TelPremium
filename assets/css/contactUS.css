@@ -1,0 +1,133 @@
+/* start of contact */
+.contact-section__container {
+  margin-inline: auto;
+  width: 90%;
+  background: url("../img/support-right.svg") bottom right no-repeat,
+    url("../img/support-left.svg") top left no-repeat var(--primary);
+  padding: 30px 10px;
+  border-radius: 20px;
+  color: white;
+  align-items: center;
+}
+
+.contact-section__container__number-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+  column-gap: 5px;
+  background-color: transparent;
+
+  padding: 10px;
+  border-radius: 20px;
+  color: #eee;
+  border: 1px solid #eee;
+  font-size: 0.9rem;
+}
+
+.contact-section__container__number-box svg {
+  width: 20px;
+}
+
+.contact-section__container__tel-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+  column-gap: 5px;
+  background-color: var(--primary-dark);
+  padding: 10px;
+  border-radius: 20px;
+  color: #eee;
+  font-size: 0.8rem;
+}
+
+.contact-section__container__tel-box a {
+  color: white;
+}
+.contact-section__container__tel-box a svg {
+  width: 20px;
+}
+/* end of contact */
+
+.col-6 {
+  padding: 0;
+  padding-right: 5px;
+}
+.contact-form__title{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.contact-form{
+  width: 100%;
+  margin-top: 0.3rem;
+}
+.contact-form__topInputsWrappper{
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+}
+.contact-form__topInputsWrappper-item{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: auto 0.3rem;
+
+}
+.contact-form__topInputsWrappper-item--title{
+  font-weight: 300;
+  opacity: 0.8;
+  margin: 0.3rem 0;
+}
+
+.contact-form__topInputsWrappper-item--input{
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: rgb(240, 240, 240);
+  padding: 0.8rem 1.2rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+}
+.havaPhoneIcon svg{
+  width: 1.7rem;
+  color: var(--primary);
+  position: absolute;
+  right: 0rem;
+  top: 0.6rem;
+}
+.havaPhoneIcon input{
+  padding-inline-start: 1.7rem;
+}
+.havaPhoneIcon{
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  position: relative;
+}
+#content-inp{
+  margin-top: 0.8rem;
+  border: none;
+  outline: none;
+  background-color: rgb(240, 240, 240);
+  padding: 0.8rem 1.2rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  height: 200px;
+}
+.button-wrapper button{
+  border: none;
+  outline: none;
+  background-color: rgb(255, 217, 196);
+  color: var(--primary);
+  padding: 0.5rem 1.9rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}

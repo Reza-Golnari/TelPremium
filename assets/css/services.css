@@ -1,0 +1,28 @@
+
+.services-section__title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.services-section__title-text{
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+.services-section__boxes-box{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    padding: 0.5rem 1.5rem;
+    box-shadow: 0 0.2rem 1rem 0.3rem rgb(236, 236, 236);
+}
+.services-section__boxes-box__img{
+    width: 5rem;
+    object-fit: cover;
+    border-radius: 100%;
+    margin-bottom: 0.5rem;
+}

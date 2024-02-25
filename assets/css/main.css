@@ -2,7 +2,6 @@
   --primary: rgb(255, 102, 0);
   --primary-dark: rgb(216, 86, 0);
   --gray: #efebf9;
-  /* --orange-primary: rgb(255, 102, 0); */
 }
 
 @font-face {
@@ -24,6 +23,11 @@
   src: url("../fonts/sans/IRANSansWeb_Light.woff2") format(woff2);
 }
 
+html {
+  direction: rtl;
+  user-select: var(--primary);
+}
+
 /* reset */
 * {
   margin: 0;
@@ -36,7 +40,6 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   font-family: "IranSans";
-
 }
 
 a {
@@ -49,4 +52,9 @@ a:hover {
 
 li {
   list-style-type: none;
+}
+
+.font-size-20 {
+  font-size: 0.9rem;
+  text-align: center;
 }
