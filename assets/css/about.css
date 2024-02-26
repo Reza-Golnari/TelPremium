@@ -2,7 +2,11 @@
   width: 100%;
   text-align: center;
   padding: 20px;
-  background: url(../img/hdpatten.svg) var(--primary);
+  background:  var(--primary);
+  background-image: url(../img/hdpatten.svg), url(../img/hdpatten2.svg); 
+  background-position: right top, left bottom;
+    background-size: 400px;
+    position: relative;
   margin: 20px 0;
   margin-bottom: 50px;
   color: white;

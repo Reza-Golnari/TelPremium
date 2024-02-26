@@ -114,7 +114,7 @@
 }
 .shape1 {
   background-color: rgb(255 125 63);
-
+  display: none;
   filter: blur(150px);
   left: -16rem;
   top: 0;
@@ -199,6 +199,10 @@
   flex-direction: column;
   margin-top: 1.8rem;
   transition: all 0.4s;
+  /* background-color: rgb(245, 245, 245); */
+  padding: 0.6rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 1rem rgb(228, 228, 228);
 
   animation: AnimatedBox 0.8s infinite;
 }
@@ -408,7 +412,7 @@
 .seccondStep-box__rightContent-leftContent--title {
   font-weight: 900;
   color: white;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 .seccondStep-box__rightContent-leftContent--SubTitle {
   color: white;
@@ -434,7 +438,7 @@
 .seccondStep-box__LeftContent-item-title {
   color: white;
   font-weight: 900;
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
 }
 .input-wrapper {
   display: flex;
@@ -461,6 +465,7 @@
 .plan-types {
   width: 100%;
   margin-top: 1rem;
+  font-size: 0.8rem;
 }
 .plan-types__items {
   width: 100%;
@@ -488,7 +493,7 @@
 
 .plan-types__items-title {
   font-weight: 900;
-  font-size: 1.3rem;
+  /* font-size: 1.3rem; */
 }
 .plan-types__items-subtitle {
   opacity: 0.7;
@@ -502,8 +507,9 @@
 }
 .plan-types__checkout-text {
   max-width: 50%;
-  opacity: 0.7;
-  font-size: 1rem;
+  opacity: 0.6;
+  font-size: 0.8rem;
+  
 }
 .plan-types__checkout-button {
   border: none;
@@ -531,6 +537,7 @@
   justify-content: space-between;
   margin-top: 5rem;
   align-items: center;
+  padding-inline: 100px;
 }
 .aboutUs-section__box-desc {
   margin: auto 5rem;
@@ -546,7 +553,7 @@
   flex-direction: row-reverse;
 }
 .aboutUs-section__box-vector {
-  width: 20rem;
+  width: 14rem;
 }
 /* End seccond step section style */
 .circle-item {
@@ -730,3 +737,52 @@
   color: white;
 }
 /* end of modal */
+.stars-wrapper{
+  position: relative;
+  max-width: max-content;
+  margin: auto;
+}
+.stars-wrapper::before{
+  content: "✭";
+    position: absolute;
+    background: linear-gradient(95deg, #ffe2d4 -35%, #ff9a72 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #7372ff;
+    filter: drop-shadow(0px 8px 10px rgb(213, 212, 255));
+    right: -3.7rem;
+    top: -25px;
+    font-size: 1.5em;
+
+    animation: 3s cubic-bezier(.68,-.55,.265,1.55) infinite rotatetwo;
+    animation-delay: 1s;
+    transform-origin: center;
+}
+
+.stars-wrapper::after{
+  content: "✭";
+    position: absolute;
+    background: linear-gradient(95deg, #ffe2d4 -35%, #ff9a72 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #7372ff;
+    filter: drop-shadow(0px 8px 10px rgb(213, 212, 255));
+    left: -3.7rem;
+    bottom: -25px;
+    font-size: 1.5em;
+    animation: 3s cubic-bezier(.68,-.55,.265,1.55) infinite rotate;
+    animation-delay: 1s;
+    transform-origin: center;
+}
+
+@keyframes rotatetwo{
+  100% {
+    transform: rotate(-360deg) rotateY(-180deg);
+}
+}
+
+@keyframes rotate{
+  100% {
+    transform: rotate(360deg) rotateY(180deg);
+}
+}

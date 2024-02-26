@@ -8,6 +8,21 @@
   font-family: "Yekan";
   src: url("../fonts/Far_Yekan.ttf") format(truetype);
 }
+@font-face {
+  font-family: "YekanBakh-Bold";
+  src: url("../fonts/YekanBakh/YekanBakhFaNum-Bold.woff") format(woff);
+}
+
+@font-face {
+  font-family: "YekanBakh-Extra-Bold";
+  src: url("../fonts/YekanBakh/YekanBakhFaNum-ExtraBold.woff") format(woff);
+}
+
+
+@font-face {
+  font-family: "YekanBakh-Regular";
+  src: url("../fonts/YekanBakh/YekanBakhFaNum-Regular.woff") format(woff);
+}
 
 @font-face {
   font-family: "IranSans";
@@ -39,9 +54,13 @@ body {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
-  font-family: "IranSans";
+  font-family: "YekanBakh-Regular";
 }
+h1 , h3 , h2 , h4 {
+  font-family: "YekanBakh-Bold" !important;
 
+
+}
 a {
   text-decoration: none;
 }
