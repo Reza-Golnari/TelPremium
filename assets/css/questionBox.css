@@ -59,6 +59,8 @@
 }
 
 .question-title {
+  display: flex !important;
+
   cursor: pointer;
 }
 

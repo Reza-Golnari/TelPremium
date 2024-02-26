@@ -1,7 +1,10 @@
 function questionBoxHandler() {
+  document.querySelectorAll('.question-title').forEach(i=>{
+    i.style.display = 'flex'
+  })
   document.querySelectorAll(".question-box").forEach((box) => {
     box.style.height =
-      box.querySelector(".question-title").scrollHeight + 10 + "px";
+      box.querySelector(".question-title").scrollHeight + 13 + "px";
     box.removeEventListener("click", boxHandler);
     box.addEventListener("click", boxHandler);
   });
@@ -20,7 +23,7 @@ function boxHandler() {
     document.querySelector(".question-box--active").style.height =
       document.querySelector(".question-box--active .question-title")
         .scrollHeight +
-      10 +
+      13 +
       "px";
     document
       .querySelector(".question-box--active")
@@ -35,8 +38,8 @@ window.addEventListener("resize", questionBoxHandler);
 
 function setBoxHeight(el) {
   const height = el.scrollHeight.toString() + "px";
-  if (el.classList.contains("question-box--active")) el.style.height = height;
+  if (el.classList.contains("question-box--active")) el.style.height = height + 6;
   else
     el.style.height =
-      el.querySelector(".question-title").scrollHeight + 10 + "px";
+      el.querySelector(".question-title").scrollHeight + 13 + "px";
 }
