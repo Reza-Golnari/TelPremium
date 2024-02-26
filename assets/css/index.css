@@ -153,6 +153,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 .seclecPlan-titleWRapper__rightContent {
   display: flex;
@@ -175,7 +176,7 @@
 }
 .seclecPlan-titleWRapper__leftContent-item {
   margin: auto 0.5rem;
-  background-color: var(--gray);
+  background-color: rgb(255, 215, 205);
   padding: 0.2rem 1.3rem;
   display: flex;
   justify-content: center;
@@ -746,7 +747,7 @@
   margin: auto;
 }
 .stars-wrapper::before{
-  content: "✭";
+  content: "\2605";
     position: absolute;
     background: linear-gradient(95deg, #ffe2d4 -35%, #ff9a72 100%);
     -webkit-background-clip: text;
@@ -763,7 +764,7 @@
 }
 
 .stars-wrapper::after{
-  content: "✭";
+  content: "\2605";
     position: absolute;
     background: linear-gradient(95deg, #ffe2d4 -35%, #ff9a72 100%);
     -webkit-background-clip: text;

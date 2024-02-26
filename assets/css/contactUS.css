@@ -18,7 +18,7 @@
   column-gap: 5px;
   background-color: transparent;
 
-  padding: 10px;
+  padding: 8px;
   border-radius: 20px;
   color: #eee;
   border: 1px solid #eee;
@@ -36,7 +36,7 @@
   flex-direction: row-reverse;
   column-gap: 5px;
   background-color: var(--primary-dark);
-  padding: 9px;
+  padding: 6px;
   border-radius: 27px;
   color: #eee;
   font-size: 0.8rem;
