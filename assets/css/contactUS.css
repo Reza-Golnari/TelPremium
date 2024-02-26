@@ -36,8 +36,8 @@
   flex-direction: row-reverse;
   column-gap: 5px;
   background-color: var(--primary-dark);
-  padding: 10px;
-  border-radius: 20px;
+  padding: 9px;
+  border-radius: 27px;
   color: #eee;
   font-size: 0.8rem;
 }

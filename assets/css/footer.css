@@ -1,6 +1,6 @@
 /* Start of footer */
 footer {
-  background: url("../img/footer-bg.webp");
+  background: url("../img/footer-bg.webp"), #f8f8f8;
   background-position: center;
   background-repeat: no-repeat;
   padding: 20px 0;

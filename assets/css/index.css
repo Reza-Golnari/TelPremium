@@ -26,10 +26,12 @@
 .header__middle {
   position: relative;
   margin: 20px 0;
-  background: url("../img/hdpatten.svg") rgb(255, 115, 0);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: rgb(255, 115, 0);
+
+      background-image: url(../img/hdpatten.svg), url(../img/hdpatten2.svg);
+      background-repeat: no-repeat;
+      background-position: right top, left bottom;
+      background-size: 400px;
   object-fit: contain;
   color: #fff;
   padding: 50px 30px;
@@ -90,7 +92,7 @@
 }
 
 .header__bottom__services-wrapper__box {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+ 
   border-radius: 20px;
   /* height: 300px; */
 }
@@ -160,7 +162,7 @@
   color: var(--primary);
   font-weight: 900;
   margin: auto 0;
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 .secondStep {
   margin: auto 0.4rem;
@@ -575,6 +577,7 @@
 }
 /* start of comment slide */
 .comment-slide {
+  font-family: "";
   height: auto;
   padding: 10px;
 }
@@ -600,7 +603,7 @@
 
 .comment-section__nav p {
   font-size: 0.8rem;
-  font-family: "IranSans-Light";
+  font-family: "YekanBakh-Regular";
 }
 /* end of comment slide */
 .selectPaymentWay {
@@ -785,4 +788,32 @@
   100% {
     transform: rotate(360deg) rotateY(180deg);
 }
+}
+
+.phoneNumbers-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.phoneNumber-wrapper__item{
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  margin-top: 0.6rem;
+  background-color: rgb(233, 233, 233);
+  box-shadow: 0 0 1rem #ececec;
+  direction: ltr;
+  width: max-content;
+  margin:0.4rem auto;
+  padding: 0.3rem 2rem;
+ 
+  
+}
+.flag{
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+}
+.number-text{
+  margin: auto 0.3rem;
 }
