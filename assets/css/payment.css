@@ -1,0 +1,27 @@
+.payment-box {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.payment-box:last-child {
+  flex-direction: column;
+  align-items: start;
+}
+
+.payment-box h6 {
+  font-weight: 900;
+  font-size: 0.8rem;
+}
+.payment-box:first-child h6 {
+  color: rgb(255, 64, 64);
+  font-size: 0.8rem;
+}
+
+.payment-box:first-child svg {
+  width: 30px;
+}
+
+.payment-box p {
+  font-family: "IranSans-Light";
+  font-size: 0.7rem;
+}
